@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Vecta Corp. - 24/7 365 turnkey vSolutions for agile eBusinesses</title>
+  <link href="styles/normalize.css" type="text/css" rel="stylesheet">
+  <link href="styles/styles.css" type="text/css" rel="stylesheet">
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="scripts/jquery.min.js"></script>
+<script>
+$(function(){
+
+	
+	//on button click event
+	$('#btn1').click(function(){
+		alert('Button 1 is clicked');
+	});
+
+	// bind event for button
+	$('#btn2').bind("click",function(){
+		alert('Button 2 is clicked');
+	});
+
+	//onClick event
+	$('#btn3').on("click",function(){
+		alert('Button 3 is clicked');
+	});
+	
+	//class event listener
+	$('.btn').on("click",function(){
+		alert('Buttons are clicked');
+	});
+
+	//CSS for div tag in section 
+	$('div').css({'height':'400px','width':'400px'});
+
+	//Display mouse action
+	$( "div" ).mouseenter(function() {
+		alert("Entered Div");
+		$('#vectaSpan').html("Entered Div");
+	});
+
+	//Display mouse action
+	$( "div" ).mouseleave(function() {
+		  alert("Left Div");
+		  $('#vectaSpan').html("Left Div");
+	});
+
+	
+	//Display mouse action
+	$( "div#vectacorp" ).on("click",function() {
+		alert("Clicked Div");
+		$('#vectaSpan').html("Clicked Div");
+	});
+
+	//anchor tag prevent default, add css and display Node name
+	$('a').click(function(event){
+	event.preventDefault();
+	$('a').css({'color':'red'});
+	alert( "clicked: " + event.target.nodeName );
+   }); 
+
+   //display width and height on window resize
+   $(window).resize(function(){
+		$('div#sizeDisplay').text("Width: "+$(window).width()+" , Height: "+$(window).height())
+   });
+
+   //apply css on text box focus in
+   $('#focusText').focusin(function(){
+	   $('#focusText').css({'background-color':'#929CA4'})
+   });
+
+
+   //apply css on text box focus in
+   $('#focusText').focusout(function(){
+	   $('#focusText').css({'background-color':'white'})
+   });
+
+
+   //form submit validation
+	$( "#target" ).submit(function( event ) {
+		var isValid=true;
+		var name =$('#name').val().trim();
+		var email=$('#email').val().trim();
+			if(name==''){
+				alert('Please enter the name field');
+				$('#name').css({'border-color':'red'});
+			} if(email==''){
+				alert('Please enter the email field');
+				$('#email').css({'border-color':'red'});
+			}
+		event.preventDefault();
+	});
+
+});
+</script>
+</head>
+
+<body>
+	<main>
+		<header></header>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Solutions</a></li>
+				<li><a href="#">Support</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+		</nav>
+		<section>
+			<h2>Welcome</h2>
+
+			<p>With innovative approaches and advanced methodologies, <b>Vecta Corporation</b> provides scalable business solutions to help companies achieve success through revenue increase, cost management, and user satisfaction. Our approach stems from the three most important business growth aspects: helping companies reach prospects, assist in converting prospects to customers, and assist in retaining those customers. This is accomplished through our interactive solutions and expertise in providing a memorable and positive user experience.</p>
+			
+			<h2>Our Solutions</h2> 
+			
+			<p class="vprospect">vProspect 2.0<br>
+			Define and research your target audience, define your strategy to reach that audience and present a strong and memorable brand to that audience.</p>
+			
+			<p class="vconvert">vConvert 2.0<br>
+			Create a highly user-friendly and easy-to-navigate information architecture that will help your prospects interact with the company on a highly interactive level.</p>
+			
+			<p class="vretain">vRetain 1.0<br>
+			Build on existing customer relationships to improve productivity and maximize customer loyalty, while growing revenues.</p>
+			<a href="modulemedia.com"> Module Media</a></br></br>
+
+			<button id="btn1">Click Me</button>
+			<button id="btn2">Bind</button>
+			<button id="btn3">OnClick</button>
+			<button class="btn">Click Me</button>
+			<button class="btn">Click Me</button></br></br>
+
+			<span id="vectaSpan"></span></br></br>
+			<input id="focusText" value="Click Me" type=text></br></br>
+
+			<!-- form starts -->
+			<form id="target" action="destination.html">
+			Name:	<input id="name"  type=text></br></br>
+			Email:	<input id="email" type="text"></br></br>
+			<input id="submit" type="submit" value="Submit">
+			</form>
+			<!-- form ends -->
+
+			<!-- div display resize -->
+			<div id="sizeDisplay"></div></br></br>
+
+			<!-- div action change -->
+			<div id="vectacorp"></div></br></br>
+			
+		</section>
+
+		<aside>
+			<h2>Client Testimonials</h2>
+			
+			<p>Throughout the years we have worked with Vecta Corporation, we have always been amazed at the level of dedication and professionalism that they have provided us and our WGDC products. It is this commitment that has increased both our income and exposure exponentially.</p>
+			
+			<p>Iona Ford<br>
+			President</p>
+		</aside>
+		<footer></footer>
+	</main>
+</body>
+</html>
